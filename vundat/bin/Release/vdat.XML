@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>vdat</name>
+    </assembly>
+    <members>
+        <member name="F:vdat.Program.readBuffer">
+            <summary>
+            This variable is used to read into it for the ReadWriteData()
+            </summary>
+        </member>
+        <member name="F:vdat.Program.progressCounter">
+            <summary>
+            Used as counter for the Progress bar to know that a full buffer would be written
+            </summary>
+        </member>
+        <member name="F:vdat.Program.IsCustomProgressCounter">
+            <summary>
+            Used to know if a custom progress byte counter shall be used as temporary input
+            </summary>
+        </member>
+        <member name="F:vdat.Program.customProgressCounter">
+            <summary>
+            Used to get the custom progressed byte count
+            </summary>
+        </member>
+        <member name="F:vdat.Program.IsProcessRunning">
+            <summary>
+            Used to know if all operations are done and no new bytes will be counted so we can tell the progress bar to count patterns and such if the counted value do not match the file size to work and generelly to activate custom counting in the reader/writer routine.
+            </summary>
+        </member>
+        <member name="F:vdat.Program.IsCustomFileCounting">
+            <summary>
+            Used to know if a custom progress byte counter shall be used as temporary input
+            </summary>
+        </member>
+        <member name="F:vdat.Program.progressFileCounter">
+            <summary>
+            Used for the progress bar to know that a file would be processed
+            </summary>
+        </member>
+        <member name="M:vdat.Program.CompareBytes(System.Byte[],System.Byte[])">
+            <summary>
+            Compare Byte by Byte or Array by Array
+            </summary>
+            <param name="bA1">Byte Array 1</param>
+            <param name="bA2">Byte Array 2</param>
+            <returns>True if both Byte Array's do match</returns>
+        </member>
+        <member name="M:vdat.Program.ByteToString(System.Byte[],System.Int32)">
+            <summary>
+            Convert a Byte Array to a Hex String (or a Array of), can be aligned to a specific digi.
+            </summary>
+            <param name="array">The Byte Array to Convert to a Hex String</param>
+            <param name="align">Do we want to aling the Hex String to a specific Length?</param>
+            <returns>The Hex String</returns>
+        </member>
+        <member name="M:vdat.Program.ShowVersion">
+            <summary>
+            Show Version and such....
+            </summary>
+        </member>
+        <member name="M:vdat.Program.ShowUsage">
+            <summary>
+            Show Help Screen
+            </summary>
+        </member>
+        <member name="M:vdat.Program.CheckInput(System.String[])">
+            <summary>
+            Do we have valid input?
+            </summary>
+            <param name="args">The arguments entered</param>
+            <returns>True if the Input is valid else False</returns>
+        </member>
+        <member name="M:vdat.Program.GetKeys(System.String,System.String)">
+            <summary>
+            Get Keys and load into buffer
+            </summary>
+            <param name="type">The Type of the Key like eg. 'index'</param>
+            <param name="version">The version of the Key eg. '100' for eg. index keys above or euqal to FW Version 1.00 or '180' for eg. index keys above or euqal to FW Version 1.80</param>
+            <returns>True if the Keys are found and CheckKeys() Cast return also True. Else False</returns>
+        </member>
+        <member name="M:vdat.Program.CheckKeys(System.String)">
+            <summary>
+            Do we use valid Keys?
+            </summary>
+            <param name="version">The version of the Key</param>
+            <returns>True if the Hash of your Keys do match the knowen Hash. Else False</returns>
+        </member>
+        <member name="M:vdat.Program.ReadWriteData(System.String,System.String,System.String,System.String,System.Byte[],System.Int32,System.Int64,System.Int64)">
+            <summary>
+            Kombinated Command for Read or Write Binary or Integer Data
+            </summary>
+            <param name="fileToUse">The File that will be used to Read from or to Write to it</param>
+            <param name="fileToUse2">This is used for the "both" methode. fileToUse will be the file to read from and fileToUse2 will be the file to write to it.</param>
+            <param name="methodReadOrWriteOrBoth">Defination for Read "r" or Write "w" or if you have big data just use Both "b"</param>
+            <param name="methodBinaryOrInteger">Defination for Binary Data (bin) or Integer Data (int) when write to a file</param>
+            <param name="binData">byte array of the binary data to read or write</param>
+            <param name="binData2">integer array of the integer data to read or write</param>
+            <param name="offset">Otional, used for the "both" methode to deffine a offset to start to read from a file. If you do not wan't to read from the begin use this var to tell the Routine to jump to your deffined offset.</param>
+            <param name="count">Optional, also used for the "both" methode to deffine to only to read a specific byte count and not till the end of the file.</param>
+        </member>
+        <!-- Ungültiger XML-Kommentar wurde für den Member "M:vdat.Program.AESCBCEncryptByte(System.Byte[])" ignoriert -->
+        <!-- Ungültiger XML-Kommentar wurde für den Member "M:vdat.Program.AESCBCDecryptByte(System.Byte[])" ignoriert -->
+    </members>
+</doc>
